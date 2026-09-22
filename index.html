@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Hercules Makio | Psiquiatra em LEM (BA) e online</title>
+<meta name="description" content="Dr. Hercules Makio, psiquiatra com foco em TDAH e ansiedade. Consultas presenciais em Luís Eduardo Magalhães (BA) e online para todo o Brasil. CRM-BA 44523 | RQE 25294.">
+<meta name="theme-color" content="#0f7b5f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --verde:#0f7b5f;
+    --verde-escuro:#0a5c47;
+    --verde-claro:#e4f2ec;
+    --amarelo:#ffd166;
+    --gelo:#f6f7f5;
+    --branco:#ffffff;
+    --tinta:#14201b;
+    --suave:#4f5b56;
+    --linha:#e2e6e1;
+    --raio:26px;
+    --raio-p:16px;
+    --sombra:0 12px 32px rgba(15,50,38,.08), 0 2px 6px rgba(15,50,38,.05);
+    --sombra-forte:0 20px 44px rgba(15,50,38,.14);
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --topo:112px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{margin:0;font-family:var(--sans);color:var(--tinta);background:var(--branco);line-height:1.6;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{line-height:1.1;margin:0;font-weight:800;letter-spacing:-.02em}
+  p{margin:0}
+  .serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;color:var(--verde)}
+  .container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+  section{scroll-margin-top:var(--topo)}
+  :focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:8px}
+  .pular{position:absolute;left:12px;top:-60px;background:var(--tinta);color:#fff;padding:10px 16px;border-radius:12px;z-index:200;text-decoration:none;font-weight:700}
+  .pular:focus{top:12px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ===== Botões ===== */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--sans);padding:14px 24px;border-radius:999px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:transform .2s, box-shadow .2s, background .2s}
+  .btn-verde{background:var(--verde);color:#fff;box-shadow:0 8px 20px rgba(15,123,95,.25)}
+  .btn-verde:hover{background:var(--verde-escuro);transform:translateY(-2px)}
+  .btn-contorno{background:#fff;color:var(--tinta);border-color:var(--linha)}
+  .btn-contorno:hover{border-color:var(--verde);color:var(--verde);transform:translateY(-2px)}
+
+  /* ===== Topo ===== */
+  .topo{position:fixed;inset:0 0 auto 0;z-index:100}
+  .faixa-entrega{background:var(--verde);color:#fff;text-align:center;font-size:.85rem;font-weight:600;padding:8px 16px}
+  .faixa-entrega strong{color:var(--amarelo)}
+  .nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linha)}
+  .nav .container{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .marca-nome{text-decoration:none;display:flex;flex-direction:column;line-height:1.15}
+  .marca-nome b{font-size:1.05rem;font-weight:800}
+  .marca-nome small{font-size:.78rem;color:var(--verde);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+  .nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+  .nav-links a{display:block;text-decoration:none;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:999px;color:var(--suave);transition:background .2s,color .2s}
+  .nav-links a:hover{background:var(--verde-claro);color:var(--verde-escuro)}
+  .nav-links .nav-cta{background:var(--verde);color:#fff}
+  .nav-links .nav-cta:hover{background:var(--verde-escuro);color:#fff}
+  .hamburguer{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--linha);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+  .hamburguer span,.hamburguer span::before,.hamburguer span::after{content:"";display:block;width:20px;height:2px;background:var(--tinta);border-radius:2px;position:relative;transition:transform .25s, background .25s}
+  .hamburguer span::before{position:absolute;top:-6px}
+  .hamburguer span::after{position:absolute;top:6px}
+  .hamburguer[aria-expanded="true"] span{background:transparent}
+  .hamburguer[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+  .hamburguer[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  @media (max-width:1080px){
+    .hamburguer{display:inline-flex}
+    .nav-links{position:absolute;top:100%;left:12px;right:12px;flex-direction:column;background:#fff;border-radius:var(--raio);box-shadow:var(--sombra-forte);padding:10px;display:none}
+    .nav-links.aberto{display:flex}
+    .nav-links a{padding:14px 16px;font-size:1rem}
+  }
+
+  /* ===== Capa ===== */
+  .capa{padding:calc(var(--topo) + 48px) 0 0;background:linear-gradient(180deg,var(--gelo) 0%,#fff 100%)}
+  .capa-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .etiqueta{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--linha);padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;color:var(--verde-escuro);box-shadow:var(--sombra)}
+  .etiqueta::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--verde)}
+  .capa h1{font-size:clamp(2.6rem,7.2vw,5.4rem);margin:18px 0 16px;overflow-wrap:break-word}
+  .capa .frase{font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--suave);max-width:30ch;font-weight:500}
+  .capa .frase .serif{font-size:1.2em}
+  .capa-botoes{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 34px}
+  .capa-numeros{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:520px}
+  .capa-numeros div{background:#fff;border:1px solid var(--linha);border-radius:var(--raio-p);padding:14px 16px;box-shadow:var(--sombra)}
+  .capa-numeros strong{display:block;font-size:1.4rem;font-weight:800;color:var(--verde)}
+  .capa-numeros span{font-size:.85rem;color:var(--suave);font-weight:600}
+  .capa-foto{position:relative}
+  .selo-agenda{width:96px !important;height:96px !important;font-size:.8rem !important;line-height:1.15;text-align:center}
+  .selo-novo{position:absolute;top:-14px;right:-6px;z-index:2;width:84px;height:84px;border-radius:50%;background:var(--amarelo);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;box-shadow:var(--sombra-forte);transform:rotate(12deg)}
+
+  /* Blocos de mídia provisórios (degradê + legenda) */
+  .ph{position:relative;border-radius:var(--raio);overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;padding:14px;box-shadow:var(--sombra);background:linear-gradient(150deg,#cfe9df 0%,#8fcbb5 45%,#0f7b5f 100%)}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ph .legenda{position:relative;background:rgba(255,255,255,.92);color:var(--tinta);font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:999px}
+  .ph.g2{background:linear-gradient(160deg,#fff3cf 0%,#ffd166 50%,#f0a94a 100%)}
+  .ph.g3{background:linear-gradient(160deg,#e9ecf2 0%,#b9c6d8 50%,#5e7390 100%)}
+  .ph.g4{background:linear-gradient(160deg,#f3e6ef 0%,#d6aecb 50%,#8b5a7e 100%)}
+  .ph.g5{background:linear-gradient(160deg,#eef3e3 0%,#c3d69a 50%,#6f8a3a 100%)}
+  .r45{aspect-ratio:4/5}
+  .r916{aspect-ratio:9/16}
+
+  /* Faixa de marcas */
+  .faixa-marcas{margin-top:64px;background:var(--verde);overflow:hidden;padding:22px 0;position:relative}
+  .faixa-marcas::before,.faixa-marcas::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:1;pointer-events:none}
+  .faixa-marcas::before{left:0;background:linear-gradient(90deg,var(--verde),transparent)}
+  .faixa-marcas::after{right:0;background:linear-gradient(-90deg,var(--verde),transparent)}
+  .faixa-trilho{display:flex;width:max-content;animation:rolar 40s linear infinite}
+  .faixa-marcas:hover .faixa-trilho{animation-play-state:paused}
+  .faixa-grupo{display:flex;flex:none}
+  .faixa-item{display:inline-flex;align-items:center;white-space:nowrap;color:#fff;font-weight:800;font-size:clamp(1.3rem,2.6vw,1.9rem);letter-spacing:-.01em}
+  .faixa-item:nth-child(even){font-family:var(--serif);font-style:italic;font-weight:400;color:var(--amarelo);font-size:clamp(1.5rem,3vw,2.2rem)}
+  .faixa-item::after{content:"✦";color:var(--amarelo);font-family:var(--sans);font-style:normal;font-size:1rem;margin:0 32px}
+  @keyframes rolar{to{transform:translateX(-50%)}}
+
+  /* ===== Seções ===== */
+  .secao{padding:96px 0}
+  .secao.gelo{background:var(--gelo)}
+  .cabeca{max-width:640px;margin-bottom:44px}
+  .cabeca .etiqueta{margin-bottom:14px}
+  .cabeca h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+  .cabeca p{color:var(--suave);margin-top:12px;font-size:1.08rem}
+
+  /* Sobre */
+  .sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .sobre-texto p{font-size:1.08rem;color:var(--suave);margin-bottom:14px}
+  .sobre-texto p strong{color:var(--tinta)}
+  .promessas{list-style:none;padding:0;margin:26px 0;display:grid;gap:12px}
+  .promessas li{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--linha);border-radius:var(--raio-p);padding:14px 18px;font-weight:700;box-shadow:var(--sombra)}
+  .promessas li::before{content:"✓";flex:none;width:30px;height:30px;border-radius:50%;background:var(--verde);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+  .assinatura{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--verde);line-height:1}
+  .registro{font-size:.85rem;color:var(--suave);font-weight:600;margin-top:6px}
+
+  /* Destaques */
+  .destaques-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .video-card{display:block;text-decoration:none;background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);overflow:hidden;transition:transform .25s, box-shadow .25s}
+  .video-card:hover{transform:translateY(-6px);box-shadow:var(--sombra-forte)}
+  .video-card .ph{border-radius:0;box-shadow:none}
+  .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:var(--sombra-forte);transition:transform .25s}
+  .play::before{content:"";margin-left:5px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--verde)}
+  .video-card:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+  .video-corpo{padding:20px 22px 24px}
+  .video-num{font-size:clamp(1.6rem,2.6vw,2rem);letter-spacing:-.02em;min-height:2em;display:flex;align-items:flex-end;font-weight:800;color:var(--verde);line-height:1}
+  .video-rotulo{display:inline-block;margin-top:6px;background:var(--amarelo);font-size:.78rem;font-weight:800;padding:4px 10px;border-radius:999px}
+  .video-corpo h3{font-size:1.2rem;margin:14px 0 6px}
+  .video-corpo p{color:var(--suave);font-size:.95rem}
+
+  /* Trabalhos */
+  .filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+  .filtro{font:700 .95rem var(--sans);padding:10px 18px;border-radius:999px;border:1px solid var(--linha);background:#fff;color:var(--suave);cursor:pointer;transition:all .2s}
+  .filtro:hover{border-color:var(--verde);color:var(--verde)}
+  .filtro[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+  .produtos{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+  .produto{background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);padding:12px;display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+  .produto:hover{transform:translateY(-4px);box-shadow:var(--sombra-forte)}
+  .produto[hidden]{display:none}
+  .produto .ph{box-shadow:none;border-radius:calc(var(--raio) - 8px)}
+  .produto-info{padding:14px 8px 6px;display:flex;flex-direction:column;flex:1}
+  .estrelas{color:#e6a817;letter-spacing:2px;font-size:.95rem}
+  .produto-nicho{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--verde);margin-top:6px}
+  .produto h3{font-size:1.08rem;margin:4px 0 4px}
+  .produto p{font-size:.9rem;color:var(--suave);margin-bottom:14px}
+  .produto-rodape{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .sob-consulta{background:var(--amarelo);font-size:.78rem;font-weight:800;padding:6px 12px;border-radius:999px}
+  .contratar{font:800 .9rem var(--sans);text-decoration:none;color:#fff;background:var(--verde);padding:9px 16px;border-radius:999px;transition:background .2s}
+  .contratar:hover{background:var(--verde-escuro)}
+  .vazio{color:var(--suave)}
+
+  /* Serviços */
+  .servicos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .servico{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:28px;box-shadow:var(--sombra);transition:transform .25s, border-color .25s}
+  .servico:hover{transform:translateY(-4px);border-color:var(--verde)}
+  .servico-num{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:16px;background:var(--verde-claro);color:var(--verde-escuro);font-weight:800;margin-bottom:18px}
+  .servico h3{font-size:1.2rem;margin-bottom:8px}
+  .servico p{color:var(--suave);font-size:.97rem}
+
+  /* E-books */
+  .ebooks-secao{background:var(--verde);color:#fff}
+  .ebooks-secao .cabeca p{color:#d9efe6}
+  .ebooks-secao .serif{color:var(--amarelo)}
+  .ebooks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .ebook{background:#fff;color:var(--tinta);border-radius:var(--raio);padding:14px;box-shadow:var(--sombra-forte);display:flex;flex-direction:column;position:relative;transition:transform .25s}
+  .ebook:hover{transform:translateY(-6px)}
+  .ebook .selo-gratis{position:absolute;top:-10px;right:18px;z-index:2;background:var(--amarelo);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;padding:6px 14px;border-radius:999px;box-shadow:var(--sombra);transform:rotate(4deg)}
+  /* Capa desenhada no estilo das cartilhas: verde menta, título forte em verde escuro */
+  .ebook-capa{aspect-ratio:3/4;border-radius:calc(var(--raio) - 8px);overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:22px 20px;background:radial-gradient(circle at 85% 10%,#9fc3b8 0%,transparent 55%),linear-gradient(160deg,#b4d0c8 0%,#c9ddd7 60%,#dbe8e4 100%);color:#024d37;text-align:left}
+  .ebook-capa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ebook-capa small{align-self:center;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem}
+  .ebook-capa em{display:block;font-family:var(--serif);font-style:italic;color:#fff;font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1;margin-bottom:6px;text-shadow:0 1px 2px rgba(2,77,55,.25)}
+  .ebook-capa strong{display:block;font-weight:800;text-transform:uppercase;font-size:clamp(1.05rem,1.9vw,1.45rem);line-height:1.08;letter-spacing:-.01em;overflow-wrap:anywhere}
+  .ebook-capa span{align-self:center;font-size:.75rem;font-weight:700;text-align:center}
+  .ebook-info{padding:16px 8px 6px;display:flex;flex-direction:column;flex:1}
+  .ebook-info h3{font-size:1.15rem;margin-bottom:6px}
+  .ebook-info p{color:var(--suave);font-size:.93rem;margin-bottom:16px}
+  .ebook-info .btn{margin-top:auto;width:100%}
+  .ebooks-aviso{text-align:center;color:#d9efe6;font-size:.88rem;margin-top:28px}
+
+  /* Números e depoimentos */
+  .subtitulo{font-size:1.25rem;margin:56px 0 20px}
+  .metricas{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .metrica{background:var(--verde);color:#fff;border-radius:var(--raio);padding:28px 22px;box-shadow:var(--sombra)}
+  .metrica:nth-child(even){background:#fff;color:var(--tinta);border:1px solid var(--linha)}
+  .metrica strong{display:block;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1}
+  .metrica:nth-child(even) strong{color:var(--verde)}
+  .metrica span{display:block;margin-top:10px;font-weight:600;opacity:.92}
+  .subtitulo-linha{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:56px 0 20px}
+  .subtitulo-linha .subtitulo{margin:0}
+  .nota-google{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;text-decoration:none;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:8px 16px;box-shadow:var(--sombra);font-weight:700;font-size:.92rem;transition:border-color .2s}
+  .nota-google:hover{border-color:var(--verde)}
+  .nota-google b{font-size:1.1rem;color:var(--verde)}
+  .depoimento .fonte{display:block;font-size:.8rem;color:var(--verde);font-weight:700;margin-top:2px}
+  .depoimentos{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .depoimento{margin:0;background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:26px;box-shadow:var(--sombra)}
+  .depoimento .estrelas{margin-bottom:10px}
+  .depoimento blockquote{margin:0 0 18px;font-size:1.02rem}
+  .depoimento figcaption{display:flex;align-items:center;gap:12px}
+  .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(140deg,var(--amarelo),var(--verde));flex:none}
+  .depoimento figcaption b{display:block}
+  .depoimento figcaption span{font-size:.88rem;color:var(--suave)}
+
+  /* Contato */
+  .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .form{background:#fff;border-radius:var(--raio);padding:30px;box-shadow:var(--sombra-forte);border:1px solid var(--linha)}
+  .campo{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+  .campo label{font-weight:700;font-size:.92rem}
+  .aviso-form{font-size:.85rem;color:var(--suave);margin-top:14px;text-align:center}
+  .campo select{font:500 1rem var(--sans);padding:14px 16px;border-radius:14px;border:1.5px solid var(--linha);background:var(--gelo);color:var(--tinta);width:100%}
+  .campo select:focus{outline:none;border-color:var(--verde);background:#fff;box-shadow:0 0 0 4px rgba(15,123,95,.15)}
+  .campo input,.campo textarea{font:500 1rem var(--sans);padding:14px 16px;border-radius:14px;border:1.5px solid var(--linha);background:var(--gelo);color:var(--tinta);width:100%}
+  .campo textarea{min-height:130px;resize:vertical}
+  .campo input:focus,.campo textarea:focus{outline:none;border-color:var(--verde);background:#fff;box-shadow:0 0 0 4px rgba(15,123,95,.15)}
+  .form .btn{width:100%}
+  .confirmacao{display:none;text-align:center;padding:24px 8px}
+  .confirmacao .ok{width:64px;height:64px;border-radius:50%;background:var(--verde);color:#fff;font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .confirmacao h3{font-size:1.4rem;margin-bottom:6px}
+  .confirmacao p{color:var(--suave)}
+  .enviado .campos{display:none}
+  .enviado .confirmacao{display:block}
+  .canais{display:grid;gap:12px;margin-top:26px}
+  .canal{display:flex;align-items:center;gap:14px;text-decoration:none;background:#fff;border:1px solid var(--linha);border-radius:var(--raio-p);padding:16px 18px;box-shadow:var(--sombra);transition:transform .2s,border-color .2s}
+  .canal:hover{transform:translateX(4px);border-color:var(--verde)}
+  .canal-icone{width:44px;height:44px;border-radius:14px;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;flex:none}
+  .canal-icone svg{width:22px;height:22px;fill:var(--verde)}
+  .canal b{display:block}
+  .canal span{font-size:.9rem;color:var(--suave);word-break:break-word}
+
+  /* Rodapé */
+  .rodape{background:var(--tinta);color:#dfe7e3;padding:48px 0}
+  .rodape .container{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+  .rodape b{color:#fff;font-size:1.1rem}
+  .rodape nav{display:flex;flex-wrap:wrap;gap:16px}
+  .rodape a{color:#dfe7e3;text-decoration:none;font-weight:600}
+  .rodape a:hover{color:var(--amarelo)}
+  .rodape small{color:#a9b5af}
+
+  /* Card de captura */
+  .modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+  .modal.aberto{display:flex}
+  .modal-fundo{position:absolute;inset:0;background:rgba(10,20,16,.6)}
+  .modal-card{position:relative;background:#fff;border-radius:var(--raio);padding:34px 28px 28px;width:100%;max-width:420px;box-shadow:var(--sombra-forte);max-height:calc(100vh - 32px);overflow-y:auto;overflow-x:hidden}
+  .modal-card .selo-novo{position:static;width:auto;height:auto;padding:6px 14px;border-radius:999px;font-size:.78rem;display:inline-flex;margin-bottom:14px;transform:rotate(-4deg);box-shadow:none}
+  .modal-card h2{font-size:1.6rem;margin-bottom:8px}
+  .modal-card>p{color:var(--suave);margin-bottom:20px}
+  .fechar{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--linha);background:#fff;font-size:1.3rem;cursor:pointer;line-height:1}
+  .fechar:hover{background:var(--gelo)}
+  @media (prefers-reduced-motion:no-preference){
+    .modal.aberto .modal-card{animation:subir .35s ease}
+    @keyframes subir{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  }
+
+  /* Animação de entrada */
+  .js .revelar{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .js .revelar.visivel{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    .js .revelar{opacity:1;transform:none}
+    .faixa-trilho{animation:none;width:auto;justify-content:center}
+    .faixa-grupo{flex-wrap:wrap;justify-content:center;flex:1}
+    .faixa-grupo+.faixa-grupo,.faixa-item[aria-hidden]{display:none}
+  }
+
+  /* ===== Responsivo ===== */
+  @media (max-width:980px){
+    .servicos{grid-template-columns:repeat(2,1fr)}
+    .metricas{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:860px){
+    .capa-grid,.sobre-grid,.contato-grid{grid-template-columns:1fr}
+    .capa-foto{max-width:420px;width:100%;margin:0 auto}
+    .sobre-grid .ph{max-width:420px;width:100%;margin:0 auto}
+    .destaques-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+    .ebooks{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  }
+  @media (max-width:600px){
+    .container{padding:0 16px}
+    .secao{padding:72px 0}
+    .servicos,.depoimentos{grid-template-columns:1fr}
+    .capa-numeros{gap:8px}
+    .capa-numeros div{padding:12px 10px}
+    .capa-numeros strong{font-size:1.1rem}
+    .capa-numeros span{font-size:.75rem}
+    .capa-botoes .btn{flex:1 1 100%}
+    .faixa-entrega{font-size:.78rem}
+    .form{padding:22px}
+    .selo-novo{right:4px}
+  }
+  @media (max-width:380px){
+    .metricas{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ===================== 1. CAPA: MENU FIXO ===================== -->
+<header class="topo">
+  <div class="faixa-entrega">Atendimento em todo <strong>Brasil</strong> | Consulta <strong>online</strong></div>
+  <nav class="nav" aria-label="Menu principal">
+    <div class="container">
+      <a class="marca-nome" href="#inicio"><b>Dr. Hercules Makio</b><small>Psiquiatra</small></a>
+      <button class="hamburguer" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span></button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#trabalhos">Conteúdos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#ebooks">E-books</a></li>
+        <li><a href="#numeros">Avaliações</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+<!-- ===================== 1. CAPA: PRIMEIRA DOBRA ===================== -->
+<section class="capa" id="inicio" aria-labelledby="titulo-capa">
+  <div class="container capa-grid">
+    <div class="revelar">
+      <span class="etiqueta">Psiquiatra · Foco em TDAH e ansiedade · Brasil</span>
+      <h1 id="titulo-capa">Dr. Hercules Makio</h1>
+      <p class="frase">Ajudo pessoas a terem uma vida mais <span class="serif">equilibrada</span>, com consultas presenciais em LEM (BA) e online para todo o Brasil.</p>
+      <div class="capa-botoes">
+        <a class="btn btn-verde" href="#contato">Agendar horário</a>
+        <a class="btn btn-contorno" href="#servicos">Como posso te ajudar</a>
+      </div>
+      <!-- Os três números da capa vêm do array "numerosCapa" no script -->
+      <div class="capa-numeros" id="capa-numeros"></div>
+    </div>
+
+    <div class="capa-foto revelar">
+      <span class="selo-novo selo-agenda" aria-hidden="true">agenda<br>aberta</span>
+      <!-- FOTO DA CAPA: para trocar, substitua o arquivo img/hercules-capa.jpg (formato 4:5, até 200 KB) -->
+      <div class="ph r45">
+        <img src="img/hercules-capa.jpg" alt="Dr. Hercules Makio sorrindo, de braços cruzados, com camisa azul clara" width="960" height="1200" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+
+  <!-- Faixa com os nomes das marcas: edite no array "marcas" do script -->
+  <div class="faixa-marcas" aria-label="Temas e marcas com quem já trabalhei">
+    <div class="faixa-trilho" id="faixa-marcas"></div>
+  </div>
+</section>
+
+<!-- ===================== 2. SOBRE MIM ===================== -->
+<section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+  <div class="container sobre-grid">
+    <!-- FOTO DO SOBRE: para trocar, substitua o arquivo img/hercules-sobre.jpg (formato 4:5, até 200 KB) -->
+    <div class="ph r45 revelar">
+      <img src="img/hercules-sobre.jpg" alt="Dr. Hercules Makio sorrindo, com camisa vinho e as mãos nos bolsos" width="960" height="1200" loading="lazy">
+    </div>
+
+    <div class="sobre-texto revelar">
+      <span class="etiqueta">Sobre mim</span>
+      <h2 id="titulo-sobre" style="font-size:clamp(2rem,4.4vw,3.1rem);margin:14px 0 20px"><span class="serif">Saúde mental</span> com cuidado e linguagem <span class="serif">simples</span></h2>
+      <p>Oi, eu sou o <strong>Dr. Hercules Makio</strong>, psiquiatra. Todos os dias escuto histórias de ansiedade, TDAH, bipolaridade e depressão, e aprendi que informação clara, dita com carinho, muda a forma como as pessoas cuidam de si.</p>
+      <p>Ansiedade e tristeza são reações normais do ser humano. Mas, quando passam a atrapalhar a rotina, o trabalho e os relacionamentos, merecem atenção. E a boa notícia é que <strong>têm tratamento</strong>. Você não precisa e nem deve passar por isso sozinho.</p>
+      <ul class="promessas">
+        <li>Escuta atenta, sem pressa e sem julgamento</li>
+        <li>Plano de tratamento construído junto com você</li>
+        <li>Acompanhamento próximo entre as consultas</li>
+      </ul>
+      <p class="assinatura">Dr. Hercules Makio</p>
+      <p class="registro">Psiquiatra | CRM-BA 44523 | RQE 25294</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. CONTEÚDOS DE DESTAQUE ===================== -->
+<section class="secao gelo" id="destaques" aria-labelledby="titulo-destaques">
+  <div class="container">
+    <div class="cabeca revelar">
+      <span class="etiqueta">Mais assistidos</span>
+      <h2 id="titulo-destaques">Informação que <span class="serif">acolhe</span></h2>
+      <p>Vídeos curtos para entender o que você sente, tirar dúvidas comuns e saber a hora de buscar ajuda.</p>
+    </div>
+    <!--
+      Os três cards são montados pelo array "destaques" no script.
+      LINK DO VÍDEO: campo "link" de cada item (ex: 'https://www.instagram.com/reel/XXXX').
+      CAPA DO VÍDEO: campo "capa" de cada item (ex: 'img/capa-1.jpg', imagem vertical 9:16).
+    -->
+    <div class="destaques-grid" id="destaques-grid"></div>
+  </div>
+</section>
+
+<!-- ===================== 4. TRABALHOS POR NICHO ===================== -->
+<section class="secao" id="trabalhos" aria-labelledby="titulo-trabalhos">
+  <div class="container">
+    <div class="cabeca revelar">
+      <span class="etiqueta">Biblioteca</span>
+      <h2 id="titulo-trabalhos">Conteúdos por <span class="serif">tema</span></h2>
+      <p>Escolha o assunto que mais tem a ver com você e veja o que eu já preparei sobre ele.</p>
+    </div>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar trabalhos por nicho"></div>
+    <p class="sr" id="aviso-filtro" aria-live="polite"></p>
+    <div class="produtos" id="produtos"></div>
+  </div>
+</section>
+
+<!-- ===================== 5. COMO EU TE AJUDO ===================== -->
+<section class="secao gelo" id="servicos" aria-labelledby="titulo-servicos">
+  <div class="container">
+    <div class="cabeca revelar">
+      <span class="etiqueta">Serviços</span>
+      <h2 id="titulo-servicos">Como posso te <span class="serif">ajudar</span></h2>
+      <p>Caminhos diferentes para cuidar da saúde mental: no consultório, online, no seu fone ou na sua empresa.</p>
+    </div>
+    <div class="servicos" id="servicos-lista"></div>
+  </div>
+</section>
+
+<!-- ===================== E-BOOKS GRATUITOS (captação) ===================== -->
+<!-- Os cards são montados pelo array "ebooks" no script -->
+<section class="secao ebooks-secao" id="ebooks" aria-labelledby="titulo-ebooks">
+  <div class="container">
+    <div class="cabeca revelar">
+      <span class="etiqueta">Presente para você</span>
+      <h2 id="titulo-ebooks">E-books <span class="serif">gratuitos</span></h2>
+      <p>Cartilhas que eu preparei com informações úteis e práticas sobre TDAH, ansiedade e depressão. Deixe seu contato e baixe na hora.</p>
+    </div>
+    <div class="ebooks" id="ebooks-lista"></div>
+    <p class="ebooks-aviso">As cartilhas trazem informação e não substituem uma consulta médica.</p>
+  </div>
+</section>
+
+<!-- ===================== 6. NÚMEROS E DEPOIMENTOS ===================== -->
+<section class="secao" id="numeros" aria-labelledby="titulo-numeros">
+  <div class="container">
+    <div class="cabeca revelar">
+      <span class="etiqueta">Quem já passou por aqui</span>
+      <h2 id="titulo-numeros">A <span class="serif">confiança</span> de quem eu acompanho</h2>
+      <p>Números de uma prática construída com escuta, tempo e cuidado, e as palavras de quem viveu isso na consulta.</p>
+    </div>
+    <div class="metricas" id="metricas"></div>
+
+    <div class="subtitulo-linha revelar">
+      <h3 class="subtitulo">O que dizem no Google</h3>
+      <!-- Link para as avaliações no Google: troque se mudar o perfil -->
+      <a class="nota-google" href="https://www.google.com/search?q=dr+hercules+makio#lrd=0x934a718c3f4cf6cd:0x35b864200f91dbe8,1,,,," target="_blank" rel="noopener">
+        <span class="estrelas" aria-hidden="true">★★★★★</span> <span>Ler todas as avaliações →</span>
+      </a>
+    </div>
+    <div class="depoimentos" id="depoimentos"></div>
+  </div>
+</section>
+
+<!-- ===================== 7. BORA CRIAR JUNTOS ===================== -->
+<section class="secao gelo" id="contato" aria-labelledby="titulo-contato">
+  <div class="container contato-grid">
+    <div class="revelar">
+      <span class="etiqueta">Agende sua consulta</span>
+      <h2 id="titulo-contato" style="font-size:clamp(2rem,4.4vw,3.1rem);margin:14px 0 14px">O primeiro passo pode ser <span class="serif">hoje</span></h2>
+      <p style="color:var(--suave);font-size:1.08rem">Me conta, em poucas palavras, o que te trouxe até aqui e se prefere consulta online ou presencial em LEM (BA). A gente retorna para combinar o melhor horário para você.</p>
+      <div class="canais">
+        <a class="canal" id="link-whatsapp" href="#" target="_blank" rel="noopener">
+          <span class="canal-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg></span>
+          <span><b>WhatsApp</b><span id="texto-whatsapp"></span></span>
+        </a>
+        <a class="canal" id="link-email" href="#">
+          <span class="canal-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.6 7l6.4 4.3L18.4 7H5.6z"/></svg></span>
+          <span><b>E-mail</b><span id="texto-email"></span></span>
+        </a>
+        <a class="canal" id="link-instagram" href="#" target="_blank" rel="noopener">
+          <span class="canal-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.7.1 3.9 1.4 4 4 .1 1 .1 1.4.1 4.1s0 3-.1 4c-.1 2.7-1.4 3.9-4 4-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.7-.1-3.9-1.4-4-4-.1-1-.1-1.3-.1-4s0-3 .1-4c.1-2.7 1.4-3.9 4-4 1-.1 1.3-.1 4-.1z"/></svg></span>
+          <span><b>Instagram</b><span id="texto-instagram"></span></span>
+        </a>
+      </div>
+    </div>
+
+    <!--
+      FORMULÁRIO: mostra a confirmação na tela e, com o código do Formspree
+      preenchido em "formspreeId" no script, envia a mensagem para o seu e-mail.
+    -->
+    <form class="form revelar" id="form-contato" novalidate>
+      <div class="campos">
+        <div class="campo">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Como posso te chamar?">
+        </div>
+        <div class="campo">
+          <label for="email">Seu e-mail ou WhatsApp</label>
+          <input id="email" name="contato" type="text" required placeholder="voce@email.com ou (77) 99999-9999">
+        </div>
+        <div class="campo">
+          <label for="modalidade">Como prefere ser atendido?</label>
+          <select id="modalidade" name="modalidade">
+            <option>Consulta online</option>
+            <option>Consulta presencial em LEM (BA)</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Conte brevemente o que você procura. Não precisa entrar em detalhes agora."></textarea>
+        </div>
+        <button class="btn btn-verde" type="submit">Quero agendar</button>
+        <p class="aviso-form">Suas informações ficam em sigilo.<br>Em crise ou emergência, ligue 188 (CVV, 24h) ou 192 (SAMU).</p>
+      </div>
+      <div class="confirmacao" role="status" aria-live="polite" tabindex="-1">
+        <div class="ok" aria-hidden="true">✓</div>
+        <h3>Mensagem recebida!</h3>
+        <p>Obrigado pela confiança. Retornamos em até 1 dia útil para combinar o seu horário.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== 8. RODAPÉ ===================== -->
+<footer class="rodape">
+  <div class="container">
+    <div>
+      <b>Dr. Hercules Makio</b><br>
+      <small>Psiquiatra | CRM-BA 44523 | RQE 25294 · © <span id="ano"></span></small>
+    </div>
+    <nav aria-label="Minhas redes">
+      <a id="rodape-instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a id="rodape-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a id="rodape-email" href="#">E-mail</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ===================== CARD DE CAPTURA (e-book gratuito) ===================== -->
+<!--
+  Abre sozinho depois de 7 segundos (uma vez por visita) e também quando alguém clica em "Quero o e-book".
+  Com o código do Formspree preenchido em "formspreeId" no script, os contatos chegam no seu e-mail.
+-->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-fundo" data-fechar></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
+    <span class="selo-novo" aria-hidden="true">grátis</span>
+    <button class="fechar" type="button" data-fechar aria-label="Fechar">×</button>
+    <form id="form-kit" novalidate>
+      <div class="campos">
+        <h2 id="titulo-modal">Quer um e-book gratuito?</h2>
+        <p style="color:var(--suave);margin-bottom:20px">Cartilhas com informações úteis e práticas, escritas por mim, sobre TDAH, ansiedade e depressão. É só deixar seu contato.</p>
+        <div class="campo">
+          <label for="kit-ebook">Escolha o e-book</label>
+          <select id="kit-ebook" name="ebook"></select>
+        </div>
+        <div class="campo">
+          <label for="kit-nome">Nome</label>
+          <input id="kit-nome" name="nome" type="text" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="kit-email">E-mail ou WhatsApp</label>
+          <input id="kit-email" name="contato" type="text" required placeholder="voce@email.com ou (77) 99999-9999">
+        </div>
+        <button class="btn btn-verde" type="submit" style="width:100%">Quero receber</button>
+      </div>
+      <div class="confirmacao" role="status" aria-live="polite" tabindex="-1">
+        <div class="ok" aria-hidden="true">✓</div>
+        <h3>Prontinho!</h3>
+        <p id="kit-msg">Em breve o e-book chega no seu contato.</p>
+        <a class="btn btn-verde" id="kit-baixar" href="#" download hidden style="margin-top:16px">Baixar agora</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   DADOS DO PORTFÓLIO
+   Edite só esta parte para mudar textos, números e links.
+   Tudo que está como 000 ou 00000 é espaço reservado: troque pelo real.
+   ===================================================================== */
+
+// Contatos (usados nos botões do contato e no rodapé)
+const contato = {
+  whatsappTexto: '(77) 9961-3873',
+  whatsappLink: 'https://wa.me/557799613873', // só números: 55 + DDD + número
+  email: 'seuemail@email.com',                 // troque pelo seu e-mail
+  instagram: '@drherculesmakiopsiquiatra',
+  instagramLink: 'https://www.instagram.com/drherculesmakiopsiquiatra/'
+};
+
+// FORMSPREE: cole aqui o código do seu formulário (a parte depois de "formspree.io/f/", ex: 'xyzabcd').
+// Com o código preenchido, o formulário de contato e o de e-books passam a enviar os dados para o seu e-mail.
+const formspreeId = 'xgavkgza';
+
+// Três números curtos da capa ("valor" aparece grande, "rotulo" aparece pequeno embaixo)
+const numerosCapa = [
+  { valor: '+000', rotulo: 'pacientes' },
+  { valor: 'RQE', rotulo: '25294' },
+  { valor: 'CRM-BA', rotulo: '44523' }
+];
+
+// Nomes que passam na faixa fina embaixo da capa
+const marcas = ['Ansiedade', 'TDAH', 'Bipolaridade', 'Depressão', 'Outros'];
+
+// Três vídeos de destaque
+// link: endereço do vídeo (Reels, TikTok, YouTube). capa: caminho da imagem 9:16 (deixe '' para usar o degradê)
+// gancho: frase grande que desperta curiosidade. chamada: etiqueta amarela logo abaixo.
+const destaques = [
+  { link: '#', capa: '', gancho: 'E se eu tiver uma crise?', chamada: 'o que fazer na hora',      titulo: 'Crise de ansiedade',        contexto: 'Respiração, atenção ao ambiente e aceitação, passo a passo.' },
+  { link: '#', capa: '', gancho: 'Vive no mundo da lua?',    chamada: 'pode não ser só distração', titulo: 'TDAH no adulto',            contexto: 'Os sintomas começam na infância, mesmo quando o diagnóstico vem depois.' },
+  { link: '#', capa: '', gancho: 'Tristeza x depressão',     chamada: 'entenda a diferença',       titulo: 'Quando a tristeza é mais', contexto: 'A depressão vai muito além da tristeza. E tem tratamento.' }
+];
+
+// Conteúdos da galeria. "nicho" precisa ser igual a um dos nomes usados nos filtros.
+// capa: caminho da imagem 4:5 (deixe '' para usar o degradê).
+// link: endereço do post ou vídeo. Enquanto estiver '', o botão abre o seu Instagram.
+const trabalhos = [
+  { nicho: 'Ansiedade',    titulo: 'Crise de ansiedade: o que fazer', formato: 'Reels · 45s',         capa: '', link: '' },
+  { nicho: 'Ansiedade',    titulo: 'Respiração para dias difíceis',   formato: 'Reels · 30s',         capa: '', link: '' },
+  { nicho: 'TDAH',         titulo: 'Foco e organização no trabalho',  formato: 'Carrossel · 8 telas', capa: '', link: '' },
+  { nicho: 'TDAH',         titulo: 'Mitos sobre TDAH',                formato: 'Reels · 60s',         capa: '', link: '' },
+  { nicho: 'Bipolaridade', titulo: 'Entendendo o transtorno bipolar', formato: 'Reels · 50s',         capa: '', link: '' },
+  { nicho: 'Bipolaridade', titulo: 'Como apoiar quem você ama',       formato: 'Carrossel · 6 telas', capa: '', link: '' },
+  { nicho: 'Depressão',    titulo: 'Tristeza ou depressão?',          formato: 'Reels · 40s',         capa: '', link: '' },
+  { nicho: 'Depressão',    titulo: 'Primeira consulta sem medo',      formato: 'Reels · 45s',         capa: '', link: '' },
+  { nicho: 'Outros',       titulo: 'Sono e saúde mental',             formato: 'Carrossel · 7 telas', capa: '', link: '' },
+  { nicho: 'Outros',       titulo: 'Burnout: sinais de alerta',       formato: 'Reels · 50s',         capa: '', link: '' }
+];
+
+// E-books gratuitos (aparecem na seção de e-books e no card que abre sozinho)
+// arquivo: caminho do PDF dentro da pasta "ebooks". Depois do cadastro aparece o botão "Baixar agora".
+// capaTitulo: texto grande da capa desenhada no site (imita a capa da cartilha).
+// capa: se quiser usar uma imagem da capa real, coloque o caminho aqui (ex: 'ebooks/capa-tdah.jpg').
+const ebooks = [
+  { titulo: 'TDAH no adulto',                 capaTitulo: 'Transtorno do Déficit de Atenção e Hiperatividade', descricao: 'Os sintomas mais comuns, curiosidades sobre o TDAH e 9 estratégias práticas para organizar o dia a dia.', paginas: '15 páginas', capa: '', arquivo: 'ebooks/tdah-adulto.pdf' },
+  { titulo: 'Ansiedade Generalizada',         capaTitulo: 'Transtorno de Ansiedade Generalizada',              descricao: 'A diferença entre a ansiedade normal e o TAG, o que ajuda no tratamento e o que fazer numa crise.',   paginas: '11 páginas', capa: '', arquivo: 'ebooks/ansiedade-generalizada.pdf' },
+  { titulo: 'Transtorno Depressivo',          capaTitulo: 'Transtorno Depressivo',                             descricao: 'Tristeza ou depressão? Os sinais, por que tratar e os hábitos que ajudam na recuperação.',             paginas: '12 páginas', capa: '', arquivo: 'ebooks/transtorno-depressivo.pdf' }
+];
+
+// Seis serviços
+const servicos = [
+  { titulo: 'Consultas online',              descricao: 'Atendimento por vídeo para qualquer lugar do Brasil, com o mesmo cuidado do consultório e receita digital.' },
+  { titulo: 'Consultas presenciais',         descricao: 'Atendimento no consultório em Luís Eduardo Magalhães (BA), num ambiente reservado e acolhedor.' },
+  { titulo: 'Programa de acompanhamento',    descricao: 'Consultas regulares e contato próximo entre elas, para ajustar o tratamento com mais agilidade e buscar melhores resultados.' },
+  { titulo: 'Palestras e cursos para empresas', descricao: 'Encontros sobre saúde mental no trabalho, ansiedade e burnout, pensados para líderes e equipes.' },
+  { titulo: 'Podcast',                       descricao: 'Conversas sobre saúde mental com linguagem simples, para ouvir no carro, na academia ou em casa.' },
+  { titulo: 'E-books',                       descricao: 'Cartilhas gratuitas sobre TDAH, ansiedade e depressão, com informações úteis e práticas para ler no seu tempo.' }
+];
+
+// Quatro métricas com contador animado.
+// valor: coloque o número real (ex: 1200). Enquanto estiver null, aparece "000".
+// casas: quantas casas depois da vírgula (ex: 1 para mostrar 2,8)
+const metricas = [
+  { valor: null, prefixo: '+', sufixo: '',      casas: 0, rotulo: 'pacientes atendidos' },
+  { valor: 5,    prefixo: '',  sufixo: '',      casas: 1, rotulo: 'nota máxima no Google' },
+  { valor: 2.8,  prefixo: '+', sufixo: ' mil',  casas: 1, rotulo: 'seguidores no Instagram' },
+  { valor: null, prefixo: '',  sufixo: ' anos', casas: 0, rotulo: 'de prática clínica' }
+];
+
+// Quatro depoimentos (avaliações públicas do Google, só com o primeiro nome e a inicial)
+const depoimentos = [
+  { texto: 'Faço acompanhamento com o Dr. Hércules Makio e me sinto muito bem acolhido. Profissional atencioso, humano e claro nas explicações. A consulta é tranquila, objetiva e transmite confiança.', nome: 'Kenji S.', fonte: 'Avaliação no Google' },
+  { texto: 'Dr. Hércules prestou uma ajuda muito significativa por meio de consulta online a um familiar muito querido, beneficiando assim todos os envolvidos nos cuidados.', nome: 'Mário Lucas T.', fonte: 'Avaliação no Google' },
+  { texto: 'Recomendo sempre o Dr. Hércules, que vem me auxiliando há uns bons anos, sendo gentil e prestativo e que, através de sua escuta sensível, entrega ótimos atendimentos!', nome: 'Kaline J.', fonte: 'Avaliação no Google' },
+  { texto: 'Ele é sensacional! Altamente competente, sensato e acolhedor! Super recomendo!', nome: 'Daniela A.', fonte: 'Avaliação no Google' }
+];
+
+/* =====================================================================
+   A PARTIR DAQUI É O FUNCIONAMENTO DA PÁGINA (não precisa mexer)
+   ===================================================================== */
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const gradientes = ['', 'g2', 'g3', 'g4', 'g5'];
+
+  // Bloco de mídia: imagem real se "capa" estiver preenchida, senão degradê com legenda
+  function midia(capa, proporcao, legenda, alt, i) {
+    const img = capa ? `<img src="${esc(capa)}" alt="${esc(alt)}" loading="lazy">` : `<span class="legenda">${esc(legenda)}</span>`;
+    const papel = capa ? '' : ` role="img" aria-label="${esc(alt)} (espaço reservado)"`;
+    return `<div class="ph ${gradientes[i % gradientes.length]} ${proporcao}"${papel}>${img}`;
+  }
+
+  // Capa: números
+  $('#capa-numeros').innerHTML = numerosCapa.map((n) => `<div><strong>${esc(n.valor)}</strong><span>${esc(n.rotulo)}</span></div>`).join('');
+
+  // Faixa de marcas: repete a lista até passar da largura da tela e duplica o grupo para rolar sem emenda
+  const trilho = $('#faixa-marcas');
+  const itensMarcas = marcas.map((m) => `<span class="faixa-item">${esc(m)}</span>`).join('');
+  trilho.innerHTML = `<div class="faixa-grupo">${itensMarcas}</div>`;
+  const grupo = trilho.firstElementChild;
+  const larguraAlvo = Math.max(window.innerWidth, screen.width || 0) * 1.2;
+  let voltas = 1;
+  // voltas em número par mantém a alternância de estilos certinha na emenda
+  while ((grupo.scrollWidth < larguraAlvo || voltas % 2) && voltas < 12) {
+    grupo.insertAdjacentHTML('beforeend', marcas.map((m) => `<span class="faixa-item" aria-hidden="true">${esc(m)}</span>`).join(''));
+    voltas++;
+  }
+  const copia = grupo.cloneNode(true);
+  copia.setAttribute('aria-hidden', 'true');
+  trilho.appendChild(copia);
+
+  // Destaques
+  $('#destaques-grid').innerHTML = destaques.map((d, i) => `
+    <a class="video-card revelar" href="${esc(d.link)}" target="_blank" rel="noopener" aria-label="Assistir: ${esc(d.titulo)}">
+      ${midia(d.capa, 'r916', 'capa do vídeo 9:16', 'Capa do vídeo ' + d.titulo, i)}<span class="play" aria-hidden="true"></span></div>
+      <div class="video-corpo">
+        <div class="video-num">${esc(d.gancho)}</div>
+        <span class="video-rotulo">${esc(d.chamada)}</span>
+        <h3>${esc(d.titulo)}</h3>
+        <p>${esc(d.contexto)}</p>
+      </div>
+    </a>`).join('');
+
+  // Trabalhos + filtros
+  const nichos = ['Todos', ...new Set(trabalhos.map((t) => t.nicho))];
+  $('#filtros').innerHTML = nichos.map((n, i) => `<button type="button" class="filtro" data-nicho="${esc(n)}" aria-pressed="${i === 0}">${esc(n)}</button>`).join('');
+  $('#produtos').innerHTML = trabalhos.map((t, i) => `
+    <article class="produto revelar" data-nicho="${esc(t.nicho)}">
+      ${midia(t.capa, 'r45', t.formato, 'Capa do trabalho ' + t.titulo, i)}</div>
+      <div class="produto-info">
+        <span class="estrelas" role="img" aria-label="Cinco estrelas">★★★★★</span>
+        <span class="produto-nicho">${esc(t.nicho)}</span>
+        <h3>${esc(t.titulo)}</h3>
+        <p>${esc(t.formato)}</p>
+        <div class="produto-rodape">
+          <span class="sob-consulta">gratuito</span>
+          <a class="contratar" href="${esc(t.link || contato.instagramLink)}" target="_blank" rel="noopener" aria-label="Assistir: ${esc(t.titulo)}">assistir →</a>
+        </div>
+      </div>
+    </article>`).join('');
+
+  $('#filtros').addEventListener('click', (e) => {
+    const botao = e.target.closest('.filtro');
+    if (!botao) return;
+    const nicho = botao.dataset.nicho;
+    document.querySelectorAll('.filtro').forEach((b) => b.setAttribute('aria-pressed', b === botao));
+    let total = 0;
+    document.querySelectorAll('.produto').forEach((p) => {
+      const mostra = nicho === 'Todos' || p.dataset.nicho === nicho;
+      p.hidden = !mostra;
+      if (mostra) { total++; p.classList.add('visivel'); }
+    });
+    $('#aviso-filtro').textContent = `${total} trabalhos em ${nicho}`;
+  });
+
+  // Serviços
+  $('#servicos-lista').innerHTML = servicos.map((s, i) => `
+    <article class="servico revelar">
+      <span class="servico-num">${String(i + 1).padStart(2, '0')}</span>
+      <h3>${esc(s.titulo)}</h3>
+      <p>${esc(s.descricao)}</p>
+    </article>`).join('');
+
+  // E-books
+  $('#ebooks-lista').innerHTML = ebooks.map((b, i) => `
+    <article class="ebook revelar">
+      <span class="selo-gratis">grátis</span>
+      <div class="ebook-capa"${b.capa ? '' : ` role="img" aria-label="Capa do e-book ${esc(b.titulo)} (espaço reservado)"`}>
+        ${b.capa ? `<img src="${esc(b.capa)}" alt="Capa do e-book ${esc(b.titulo)}" loading="lazy">` : `
+        <small>Cartilha informativa</small>
+        <div>
+          <em>Saiba mais sobre o</em>
+          <strong>${esc(b.capaTitulo || b.titulo)}</strong>
+        </div>
+        <span>Dr. Hercules Makio · ${esc(b.paginas)}</span>`}
+      </div>
+      <div class="ebook-info">
+        <h3>${esc(b.titulo)}</h3>
+        <p>${esc(b.descricao)}</p>
+        <button type="button" class="btn btn-verde" data-ebook="${i}">Quero o e-book</button>
+      </div>
+    </article>`).join('');
+  $('#kit-ebook').innerHTML = ebooks.map((b, i) => `<option value="${i}">${esc(b.titulo)}</option>`).join('');
+
+  // Métricas
+  $('#metricas').innerHTML = metricas.map((m) => `
+    <div class="metrica revelar">
+      <strong data-alvo="${m.valor == null ? '' : m.valor}" data-casas="${m.casas || 0}" data-prefixo="${esc(m.prefixo)}" data-sufixo="${esc(m.sufixo)}">${esc(m.prefixo)}${m.valor == null ? '000' : (0).toFixed(m.casas || 0).replace('.', ',')}${esc(m.sufixo)}</strong>
+      <span>${esc(m.rotulo)}</span>
+    </div>`).join('');
+
+  // Depoimentos
+  $('#depoimentos').innerHTML = depoimentos.map((d) => `
+    <figure class="depoimento revelar">
+      <div class="estrelas" role="img" aria-label="Cinco estrelas">★★★★★</div>
+      <blockquote>“${esc(d.texto)}”</blockquote>
+      <figcaption><span class="avatar" aria-hidden="true"></span><span><b>${esc(d.nome)}</b><span class="fonte">${esc(d.fonte)}</span></span></figcaption>
+    </figure>`).join('');
+
+  // Contatos e rodapé
+  const mail = 'mailto:' + contato.email;
+  $('#link-whatsapp').href = $('#rodape-whatsapp').href = contato.whatsappLink;
+  $('#link-email').href = $('#rodape-email').href = mail;
+  $('#link-instagram').href = $('#rodape-instagram').href = contato.instagramLink;
+  $('#texto-whatsapp').textContent = contato.whatsappTexto;
+  $('#texto-email').textContent = contato.email;
+  $('#texto-instagram').textContent = contato.instagram;
+  $('#ano').textContent = new Date().getFullYear();
+
+  // Menu sanduíche
+  const hamburguer = $('.hamburguer');
+  const menu = $('#menu');
+  function fecharMenu() { menu.classList.remove('aberto'); hamburguer.setAttribute('aria-expanded', 'false'); hamburguer.setAttribute('aria-label', 'Abrir menu'); }
+  hamburguer.addEventListener('click', () => {
+    const abre = !menu.classList.contains('aberto');
+    menu.classList.toggle('aberto', abre);
+    hamburguer.setAttribute('aria-expanded', abre);
+    hamburguer.setAttribute('aria-label', abre ? 'Fechar menu' : 'Abrir menu');
+  });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) fecharMenu(); });
+
+  // Contador animado
+  function contar(el) {
+    const alvo = el.dataset.alvo;
+    if (alvo === '') return;
+    const fim = Number(alvo), pre = el.dataset.prefixo, suf = el.dataset.sufixo, casas = Number(el.dataset.casas) || 0;
+    const formata = (n) => pre + n.toLocaleString('pt-BR', { minimumFractionDigits: casas, maximumFractionDigits: casas }) + suf;
+    if (reduzMovimento) { el.textContent = formata(fim); return; }
+    const duracao = 1600, inicio = performance.now();
+    (function passo(agora) {
+      const t = Math.min((agora - inicio) / duracao, 1);
+      el.textContent = formata(fim * (1 - Math.pow(1 - t, 3)));
+      if (t < 1) requestAnimationFrame(passo);
+    })(inicio);
+  }
+
+  // Animação de entrada ao rolar
+  const revelaveis = document.querySelectorAll('.revelar');
+  const contadores = document.querySelectorAll('[data-alvo]');
+  if ('IntersectionObserver' in window && !reduzMovimento) {
+    const obs = new IntersectionObserver((entradas) => {
+      entradas.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('visivel'); obs.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revelaveis.forEach((el) => obs.observe(el));
+    const obsNum = new IntersectionObserver((entradas) => {
+      entradas.forEach((en) => { if (en.isIntersecting) { contar(en.target); obsNum.unobserve(en.target); } });
+    }, { threshold: 0.5 });
+    contadores.forEach((el) => obsNum.observe(el));
+  } else {
+    revelaveis.forEach((el) => el.classList.add('visivel'));
+    contadores.forEach(contar);
+  }
+
+  // Formulário de contato
+  const formContato = $('#form-contato');
+  // Envia os dados ao Formspree (se o código estiver preenchido lá em cima)
+  function enviarFormspree(dados) {
+    if (!formspreeId) return Promise.resolve();
+    return fetch('https://formspree.io/f/' + formspreeId, { method: 'POST', body: dados, headers: { Accept: 'application/json' } })
+      .catch(() => {});
+  }
+
+  formContato.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!formContato.checkValidity()) { formContato.reportValidity(); return; }
+    const dados = new FormData(formContato);
+    dados.append('origem', 'Formulário de agendamento');
+    enviarFormspree(dados);
+    formContato.classList.add('enviado');
+    formContato.querySelector('.confirmacao').focus();
+  });
+
+  // Card de captura: aparece depois de 7 segundos, uma vez por visita
+  const modal = $('#modal');
+  const formKit = $('#form-kit');
+  let focoAnterior = null;
+  const chave = 'midiaKitMostrado';
+  function jaMostrou() { try { return sessionStorage.getItem(chave) === '1'; } catch (e) { return false; } }
+  function marcarMostrado() { try { sessionStorage.setItem(chave, '1'); } catch (e) {} }
+  function abrirModal(indiceEbook) {
+    focoAnterior = document.activeElement;
+    if (indiceEbook != null) $('#kit-ebook').value = String(indiceEbook);
+    modal.classList.add('aberto');
+    modal.setAttribute('aria-hidden', 'false');
+    marcarMostrado();
+    $('#kit-nome').focus();
+  }
+  function fecharModal() {
+    modal.classList.remove('aberto');
+    modal.setAttribute('aria-hidden', 'true');
+    if (focoAnterior && focoAnterior.focus) focoAnterior.focus();
+  }
+  if (!jaMostrou()) setTimeout(() => { if (!jaMostrou()) abrirModal(); }, 7000);
+  modal.addEventListener('click', (e) => { if (e.target.closest('[data-fechar]')) fecharModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (modal.classList.contains('aberto')) fecharModal();
+      else if (menu.classList.contains('aberto')) { fecharMenu(); hamburguer.focus(); }
+    }
+    // Mantém o foco do teclado dentro do card enquanto ele está aberto
+    if (e.key === 'Tab' && modal.classList.contains('aberto')) {
+      const focaveis = [...modal.querySelectorAll('button, input, select, a[href]')].filter((el) => el.offsetParent !== null && el.tabIndex >= 0);
+      if (!focaveis.length) return;
+      const primeiro = focaveis[0], ultimo = focaveis[focaveis.length - 1];
+      if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+      else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
+    }
+  });
+  // Botões "Quero o e-book" abrem o card já com o e-book escolhido
+  document.addEventListener('click', (e) => {
+    const botao = e.target.closest('[data-ebook]');
+    if (botao) abrirModal(botao.dataset.ebook);
+  });
+  formKit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!formKit.checkValidity()) { formKit.reportValidity(); return; }
+    const escolhido = ebooks[Number($('#kit-ebook').value)] || ebooks[0];
+    const dadosKit = new FormData(formKit);
+    dadosKit.set('ebook', escolhido ? escolhido.titulo : '');
+    dadosKit.append('origem', 'Download de e-book');
+    enviarFormspree(dadosKit);
+    const baixar = $('#kit-baixar');
+    if (escolhido && escolhido.arquivo) {
+      baixar.href = escolhido.arquivo;
+      baixar.hidden = false;
+      $('#kit-msg').textContent = `Seu e-book "${escolhido.titulo}" está pronto. Boa leitura!`;
+    } else if (escolhido) {
+      $('#kit-msg').textContent = `Em breve o e-book "${escolhido.titulo}" chega no seu contato.`;
+    }
+    formKit.classList.add('enviado');
+    formKit.querySelector('.confirmacao').focus();
+  });
+})();
+</script>
+</body>
+</html>
