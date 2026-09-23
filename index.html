@@ -151,6 +151,7 @@
   .produto:hover{transform:translateY(-4px);box-shadow:var(--sombra-forte)}
   .produto[hidden]{display:none}
   .produto .ph{box-shadow:none;border-radius:calc(var(--raio) - 8px)}
+  .produto > a{display:block}
   .produto-info{padding:14px 8px 6px;display:flex;flex-direction:column;flex:1}
   .estrelas{color:#e6a817;letter-spacing:2px;font-size:.95rem}
   .produto-nicho{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--verde);margin-top:6px}
@@ -681,7 +682,7 @@ const depoimentos = [
   $('#filtros').innerHTML = nichos.map((n, i) => `<button type="button" class="filtro" data-nicho="${esc(n)}" aria-pressed="${i === 0}">${esc(n)}</button>`).join('');
   $('#produtos').innerHTML = trabalhos.map((t, i) => `
     <article class="produto revelar" data-nicho="${esc(t.nicho)}">
-      ${midia(t.capa, 'r45', t.formato, 'Capa do trabalho ' + t.titulo, i)}</div>
+      <a href="${esc(t.link || contato.instagramLink)}" target="_blank" rel="noopener" aria-label="Conferir: ${esc(t.titulo)}">${midia(t.capa, 'r45', t.formato, 'Capa do trabalho ' + t.titulo, i)}</div></a>
       <div class="produto-info">
         <span class="estrelas" role="img" aria-label="Cinco estrelas">★★★★★</span>
         <span class="produto-nicho">${esc(t.nicho)}</span>
