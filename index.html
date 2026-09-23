@@ -209,7 +209,6 @@
   .depoimento .estrelas{margin-bottom:10px}
   .depoimento blockquote{margin:0 0 18px;font-size:1.02rem}
   .depoimento figcaption{display:flex;align-items:center;gap:12px}
-  .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(140deg,var(--amarelo),var(--verde));flex:none}
   .depoimento figcaption b{display:block}
   .depoimento figcaption span{font-size:.88rem;color:var(--suave)}
 
@@ -749,7 +748,7 @@ const depoimentos = [
     <figure class="depoimento revelar">
       <div class="estrelas" role="img" aria-label="Cinco estrelas">★★★★★</div>
       <blockquote>“${esc(d.texto)}”</blockquote>
-      <figcaption><span class="avatar" aria-hidden="true"></span><span><b>${esc(d.nome)}</b><span class="fonte">${esc(d.fonte)}</span></span></figcaption>
+      <figcaption><span><b>${esc(d.nome)}</b><span class="fonte">${esc(d.fonte)}</span></span></figcaption>
     </figure>`).join('');
 
   // Contatos e rodapé
