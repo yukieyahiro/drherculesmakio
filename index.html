@@ -140,20 +140,6 @@
   .assinatura{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--verde);line-height:1}
   .registro{font-size:.85rem;color:var(--suave);font-weight:600;margin-top:6px}
 
-  /* Destaques */
-  .destaques-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .video-card{display:block;text-decoration:none;background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);overflow:hidden;transition:transform .25s, box-shadow .25s}
-  .video-card:hover{transform:translateY(-6px);box-shadow:var(--sombra-forte)}
-  .video-card .ph{border-radius:0;box-shadow:none}
-  .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:var(--sombra-forte);transition:transform .25s}
-  .play::before{content:"";margin-left:5px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--verde)}
-  .video-card:hover .play{transform:translate(-50%,-50%) scale(1.08)}
-  .video-corpo{padding:20px 22px 24px}
-  .video-num{font-size:clamp(1.6rem,2.6vw,2rem);letter-spacing:-.02em;min-height:2em;display:flex;align-items:flex-end;font-weight:800;color:var(--verde);line-height:1}
-  .video-rotulo{display:inline-block;margin-top:6px;background:var(--amarelo);font-size:.78rem;font-weight:800;padding:4px 10px;border-radius:999px}
-  .video-corpo h3{font-size:1.2rem;margin:14px 0 6px}
-  .video-corpo p{color:var(--suave);font-size:.95rem}
-
   /* Trabalhos */
   .filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
   .filtro{font:700 .95rem var(--sans);padding:10px 18px;border-radius:999px;border:1px solid var(--linha);background:#fff;color:var(--suave);cursor:pointer;transition:all .2s}
@@ -298,7 +284,6 @@
     .capa-grid,.sobre-grid,.contato-grid{grid-template-columns:1fr}
     .capa-foto{max-width:420px;width:100%;margin:0 auto}
     .sobre-grid .ph{max-width:420px;width:100%;margin:0 auto}
-    .destaques-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
     .ebooks{grid-template-columns:1fr;max-width:400px;margin:0 auto}
   }
   @media (max-width:600px){
@@ -331,7 +316,6 @@
       <button class="hamburguer" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span></button>
       <ul class="nav-links" id="menu">
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#destaques">Destaques</a></li>
         <li><a href="#trabalhos">Conteúdos</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#ebooks">E-books</a></li>
@@ -398,24 +382,7 @@
   </div>
 </section>
 
-<!-- ===================== 3. CONTEÚDOS DE DESTAQUE ===================== -->
-<section class="secao gelo" id="destaques" aria-labelledby="titulo-destaques">
-  <div class="container">
-    <div class="cabeca revelar">
-      <span class="etiqueta">Mais assistidos</span>
-      <h2 id="titulo-destaques">Informação que <span class="serif">acolhe</span></h2>
-      <p>Vídeos curtos para entender o que você sente, tirar dúvidas comuns e saber a hora de buscar ajuda.</p>
-    </div>
-    <!--
-      Os três cards são montados pelo array "destaques" no script.
-      LINK DO VÍDEO: campo "link" de cada item (ex: 'https://www.instagram.com/reel/XXXX').
-      CAPA DO VÍDEO: campo "capa" de cada item (ex: 'img/capa-1.jpg', imagem vertical 9:16).
-    -->
-    <div class="destaques-grid" id="destaques-grid"></div>
-  </div>
-</section>
-
-<!-- ===================== 4. TRABALHOS POR NICHO ===================== -->
+<!-- ===================== 3. TRABALHOS POR NICHO ===================== -->
 <section class="secao" id="trabalhos" aria-labelledby="titulo-trabalhos">
   <div class="container">
     <div class="cabeca revelar">
@@ -429,7 +396,7 @@
   </div>
 </section>
 
-<!-- ===================== 5. COMO EU TE AJUDO ===================== -->
+<!-- ===================== 4. COMO EU TE AJUDO ===================== -->
 <section class="secao gelo" id="servicos" aria-labelledby="titulo-servicos">
   <div class="container">
     <div class="cabeca revelar">
@@ -455,7 +422,7 @@
   </div>
 </section>
 
-<!-- ===================== 6. NÚMEROS E DEPOIMENTOS ===================== -->
+<!-- ===================== 5. NÚMEROS E DEPOIMENTOS ===================== -->
 <section class="secao" id="numeros" aria-labelledby="titulo-numeros">
   <div class="container">
     <div class="cabeca revelar">
@@ -476,7 +443,7 @@
   </div>
 </section>
 
-<!-- ===================== 7. BORA CRIAR JUNTOS ===================== -->
+<!-- ===================== 6. BORA CRIAR JUNTOS ===================== -->
 <section class="secao gelo" id="contato" aria-labelledby="titulo-contato">
   <div class="container contato-grid">
     <div class="revelar">
@@ -539,7 +506,7 @@
 
 </main>
 
-<!-- ===================== 8. RODAPÉ ===================== -->
+<!-- ===================== 7. RODAPÉ ===================== -->
 <footer class="rodape">
   <div class="container">
     <div>
@@ -621,15 +588,6 @@ const numerosCapa = [
 
 // Nomes que passam na faixa fina embaixo da capa
 const marcas = ['Ansiedade', 'TDAH', 'Bipolaridade', 'Depressão', 'Outros'];
-
-// Três vídeos de destaque
-// link: endereço do vídeo (Reels, TikTok, YouTube). capa: caminho da imagem 9:16 (deixe '' para usar o degradê)
-// gancho: frase grande que desperta curiosidade. chamada: etiqueta amarela logo abaixo.
-const destaques = [
-  { link: 'https://www.instagram.com/p/DVjwcHfDjns/', capa: 'img/capa-crise-ansiedade.jpg', gancho: 'E se eu tiver uma crise?', chamada: 'o que fazer na hora',      titulo: 'Crise de ansiedade',        contexto: 'Um exercício de respiração simples para reduzir a ativação do corpo durante a crise.' },
-  { link: '#', capa: '', gancho: 'Vive no mundo da lua?',    chamada: 'pode não ser só distração', titulo: 'TDAH no adulto',            contexto: 'Os sintomas começam na infância, mesmo quando o diagnóstico vem depois.' },
-  { link: '#', capa: '', gancho: 'Tristeza x depressão',     chamada: 'entenda a diferença',       titulo: 'Quando a tristeza é mais', contexto: 'A depressão vai muito além da tristeza. E tem tratamento.' }
-];
 
 // Conteúdos da galeria. "nicho" precisa ser igual a um dos nomes usados nos filtros.
 // capa: caminho da imagem 4:5 (deixe '' para usar o degradê).
@@ -717,18 +675,6 @@ const depoimentos = [
   const copia = grupo.cloneNode(true);
   copia.setAttribute('aria-hidden', 'true');
   trilho.appendChild(copia);
-
-  // Destaques
-  $('#destaques-grid').innerHTML = destaques.map((d, i) => `
-    <a class="video-card revelar" href="${esc(d.link)}" target="_blank" rel="noopener" aria-label="Assistir: ${esc(d.titulo)}">
-      ${midia(d.capa, 'r916', 'capa do vídeo 9:16', 'Capa do vídeo ' + d.titulo, i)}<span class="play" aria-hidden="true"></span></div>
-      <div class="video-corpo">
-        <div class="video-num">${esc(d.gancho)}</div>
-        <span class="video-rotulo">${esc(d.chamada)}</span>
-        <h3>${esc(d.titulo)}</h3>
-        <p>${esc(d.contexto)}</p>
-      </div>
-    </a>`).join('');
 
   // Trabalhos + filtros
   const nichos = ['Todos', ...new Set(trabalhos.map((t) => t.nicho))];
