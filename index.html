@@ -56,7 +56,7 @@
   /* ===== Topo ===== */
   .topo{position:fixed;inset:0 0 auto 0;z-index:100}
   .faixa-entrega{background:var(--verde);color:#fff;text-align:center;font-size:.85rem;font-weight:600;padding:8px 16px}
-  .faixa-entrega strong{color:var(--amarelo)}
+  .faixa-entrega strong{color:#fff;font-weight:800}
   .nav{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linha)}
   .nav .container{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
   .marca-nome{text-decoration:none;display:flex;flex-direction:column;line-height:1.15}
@@ -619,8 +619,8 @@ const servicos = [
   { titulo: 'Consultas online',              descricao: 'Atendimento por vídeo para qualquer lugar do Brasil, com o mesmo cuidado do consultório e receita digital.' },
   { titulo: 'Consultas presenciais',         descricao: 'Atendimento no consultório em Luís Eduardo Magalhães (BA), num ambiente reservado e acolhedor.' },
   { titulo: 'Programa de acompanhamento',    descricao: 'Consultas regulares e contato próximo entre elas, para ajustar o tratamento com mais agilidade e buscar melhores resultados.' },
-  { titulo: 'Palestras e cursos para empresas', descricao: 'Encontros sobre saúde mental no trabalho, ansiedade e burnout, pensados para líderes e equipes.' },
   { titulo: 'Podcast',                       descricao: 'Conversas sobre saúde mental com linguagem simples, para ouvir no carro, na academia ou em casa.' },
+  { titulo: 'Palestras e cursos para empresas', descricao: 'Encontros sobre saúde mental no trabalho, ansiedade e burnout, pensados para líderes e equipes.' },
   { titulo: 'E-books',                       descricao: 'Cartilhas gratuitas sobre TDAH, ansiedade e depressão, com informações úteis e práticas para ler no seu tempo.' }
 ];
 
@@ -631,7 +631,7 @@ const metricas = [
   { valor: null, prefixo: '+', sufixo: '',      casas: 0, rotulo: 'pacientes atendidos' },
   { valor: 5,    prefixo: '',  sufixo: '',      casas: 1, rotulo: 'nota máxima no Google' },
   { valor: 2.8,  prefixo: '+', sufixo: ' mil',  casas: 1, rotulo: 'seguidores no Instagram' },
-  { valor: null, prefixo: '',  sufixo: ' anos', casas: 0, rotulo: 'de prática clínica' }
+  { valor: 9,    prefixo: '',  sufixo: ' anos', casas: 0, rotulo: 'de prática clínica' }
 ];
 
 // Quatro depoimentos (avaliações públicas do Google, só com o primeiro nome e a inicial)
